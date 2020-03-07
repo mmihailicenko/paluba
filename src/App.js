@@ -4,10 +4,6 @@ import './App.css';
 
 function App() {
 
-  const exampleQuery = "Better%20Call%20Saul";
-  const corsAnywhere = 'https://cors-anywhere.herokuapp.com/'
-  //const url = corsAnywhere + `http://seasonvar.ru/autocomplete.php?query=${search}`;
-
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('Better%20Call%20Saul');
@@ -47,12 +43,14 @@ function App() {
           Search
         </button>
       </form>
+      <div className="movies">
       {movies.map(movie =>(
-        <Movie 
-        //title={movie.suggestions.valu} 
+        <Movie
+        title={movie}
         link={movie}
         />
       ))}
+      </div>
     </div>
   );
 }
